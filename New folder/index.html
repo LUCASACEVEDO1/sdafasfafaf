@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	
+.cuadro1{
+position: absolute;
+right: 44%;
+top: 10%;
+width: 20%;
+height: 10%;
+background: #cff9a5;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+}
+
+.cuadro2{
+position: absolute;
+right: 35%;
+top: 30%;
+width: 0%;
+height: 40%;
+background-repeat: no-repeat;
+color:white;
+text-align: center;
+font-size: 300%;
+
+background-image: url("neo.png");
+}
+	
+.cuadro3{
+position: absolute;
+right: 69%;
+top: 30%;
+width: 20%;
+height: 10%;
+background:#3eece0;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+}
+.cuadro4{
+position: absolute;
+right: 69%;
+top: 60%;
+width: 20%;
+height: 10%;
+background:#3eece0;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+}
+.lugar{
+position: absolute;
+right: 0%;
+top: 22%;
+width: 0%;
+height: 10%;
+background: #cff9a5;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+z-index: 3;
+
+transition:all 1s;
+}
+.vuelta{
+position: absolute;
+right: 26%;
+top: 64%;
+width: 0%;
+height: 5%;
+background: #cff9a5;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+z-index:7;
+border-radius: 100px;
+transition:all 1s;
+}
+.vuelta2{
+position: absolute;
+right: 26%;
+top: 84%;
+width: 0%;
+height: 5%;
+background: #cff9a5;
+color:white;
+text-align: center;
+font-size: 300%;
+border-radius: 10px;
+z-index:7;
+border-radius: 100px;
+transition:all 1s;
+}
+.cuadro{
+position: absolute;
+right: 25%;
+top: 30%;
+width: 0%;
+height: 40%;
+background: #3eece0;
+color:white;
+text-align: center;
+font-size: 300%;
+color: transparent;
+border-radius: 10px;
+transition:all 1s;
+z-index: 6;
+}
+
+.cuadro5{
+
+position: absolute;
+right: 25%;
+top: 25%;
+width: 0%;
+height: 70%;
+color:white;
+text-align: center;
+font-size: 300%;
+color: transparent;
+border-radius: 10px;
+transition:all 1s;
+z-index: 6;
+background-color:cyan;
+}
+
+.cuadro6{
+
+position: absolute;
+right: 25%;
+top: 25%;
+width: 70%;
+height: 70%;
+background-repeat: no-repeat;
+color:white;
+text-align: center;
+font-size: 300%;
+color: transparent;
+border-radius: 10px;
+transition:all 1s;
+z-index: 9;
+background-image: url("balon.jpg");
+}
+
+body{
+	background:#facb96; 
+}
+</style>
+	
+	<title></title>
+</head>
+<body onmousemove="posi(event)">
+
+<div class="cuadro1" onclick="logo()">Neosistemas</div>
+<div class="cuadro2" id="cua"></div>
+<div class="cuadro3" id="cua2" onclick="posiciones()">Cuadro 1</div>
+<div class="cuadro4" id="cua3" onclick="libre()">Cuadro 2</div>
+<div class="lugar" id="lugarsito">X y Y</div>
+<div class="cuadro" id="cuadrote"></div>
+<div class="cuadro5" id="cuadrote2"><div class="cuadro6" id="cuadrote3"></div></div>
+<div class="vuelta" id="vuelti" onclick="devolver()"></div>
+<div class="vuelta2" id="vuelti2" onclick="devolver2()"></div>
+<script>
+
+function logo(){
+
+	cua.style.width=30+"%";
+}	
+
+function logo2(){
+
+	cua.style.width=0+"%";
+
+
+}
+function posi(event)
+{
+x=event.clientX;
+y=event.clientY;
+lugarsito.innerHTML=x+"  "+y;
+	if(x>538 && x<1148  && y>227 && y<521)
+	{
+		cuadrote.innerHTML="Estas adentro";
+	}
+	else{
+		cuadrote.innerHTML="fuera";
+	}
+
+}
+function posiciones(){
+
+lugarsito.style.width=20+"%";
+
+lugarsito.style.right=19+"%";
+
+cuadrote.style.width=40+"%";
+
+cuadrote.style.color= "red";
+
+vuelti.style.width=2.5+"%";
+
+
+}
+function libre(){
+
+
+cuadrote2.style.width=40+"%";
+
+
+vuelti2.style.width=2.5+"%";
+
+}
+
+function cambiar(){
+x=x+1;
+if(x%2==0)
+{
+cuadrote3.style.backgroundImage= "url("+"balon.jpg"+")";
+}
+else
+{
+cuadrote3.style.backgroundImage= "url("+"ti.png"+")";
+
+}
+
+}
+function devolver(){
+
+
+
+lugarsito.style.width=0+"%";
+
+lugarsito.style.right=0+"%";
+
+cuadrote.style.width=0+"%";
+
+vuelti.style.width=0+"%";
+
+cuadrote.style.color= "transparent";
+}
+function devolver2(){
+
+x=-1;
+
+cuadrote2.style.width=0+"%";
+
+vuelti2.style.width=0+"%";
+
+cuadrote2.style.color= "transparent";
+}
+function devolver2(){
+
+
+
+cuadrote2.style.width=0+"%";
+
+vuelti2.style.width=0+"%";
+
+cuadrote2.style.color= "transparent";
+}
+setTimeout(logo2,2000);
+
+crono=setInterval(cambiar,1000);
+</script>
+
+</body>
+</html>
